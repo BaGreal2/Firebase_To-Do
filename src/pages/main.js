@@ -40,7 +40,7 @@ export const mainAccount = (name1, photourl) => {
       console.log('notes:', notes);
       moment().format('L');
       writeDownNotes(notes);
-
+      e.target.reset()
       Swal.fire(
         'Complete!',
         `You have successfully added task as "${notes.nickName}"`,
