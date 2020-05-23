@@ -52,6 +52,7 @@
     "core-js": "^3.6.4",
     "firebase": "^7.14.2",
     "handlebars": "^4.7.3",
-    "moment": "^2.25.3"
+    "moment": "^2.25.3",
+    "sweetalert2": "^9.13.1"
   }
 }

@@ -2,6 +2,7 @@ import { auth } from './firebase/config';
 import { createAccount } from './pages/auth';
 import { mainAccount } from './pages/main';
 import './public/styles.css';
+import './styles/authStyles.css'
 import login from './templates/log.hbs'
 import register from './templates/reg.hbs'
 import { relativeTimeRounding } from 'moment';
@@ -25,9 +26,12 @@ const authStateChange = async () => {
         user.displayName,
         user.photoURL,
       );
+      document.querySelector('.addNote').classList.remove('hidden')
+      //console.log(document.querySelector('.ul_main'))
       document.querySelector('.accountContainer2').style.display="none";
     } else {
       createAccount();
+      document.querySelector('.addNote').classList.add('hidden')
     }
     
     const btn = document.querySelector('.signout');

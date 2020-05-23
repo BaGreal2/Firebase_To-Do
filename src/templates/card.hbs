@@ -1,10 +1,10 @@
 
-<ul>
+<ul class="ul_main">
     {{#each this}}
-    <li id={{id}} data-deadline={{deadline}}>
-        <h2>{{nickName}}</h2>
-        <h3>{{title}}</h3>
-        <p>{{description}}</p>
+    <li id={{id}} data-deadline={{deadline}} class="part_todo">
+        <h2 class="nickname_card">{{nickName}}</h2>
+        <h3 class="title_card">{{title}}</h3>
+        <p class="description">{{description}}</p>
         <button class="delete">DELETE</button>
     </li>
     {{/each}}
