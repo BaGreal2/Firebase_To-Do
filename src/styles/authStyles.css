@@ -49,6 +49,10 @@ input:hover{
   border-bottom: 1px solid #2c8a8a;
   color: #2c8a8a;
 }
+input:focus{
+  border-bottom: 1px solid #2c8a8a;
+  color: #2c8a8a;
+}
 button{
   border: 1px solid #1adbd5;
   background-color:#f2fcfc;
@@ -60,6 +64,7 @@ button{
   font-weight: 400;
   transition-property: all;
   transition-duration: 0.4s;
+  cursor: pointer;
 }
 button:hover{
   color: #2c8a8a;
@@ -117,6 +122,7 @@ button:hover{
   margin-bottom: 40px;
   transition-property: all;
   transition-duration: 0.4s;
+  cursor: pointer;
 }
 ul{
   list-style: none;
