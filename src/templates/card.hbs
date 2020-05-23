@@ -1,0 +1,11 @@
+
+<ul>
+    {{#each this}}
+    <li id={{id}} data-deadline={{deadline}}>
+        <h2>{{nickName}}</h2>
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+        <button class="delete">DELETE</button>
+    </li>
+    {{/each}}
+</ul>
