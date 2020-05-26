@@ -20,17 +20,11 @@ const writeDownNotes = async object => {
   console.log('addDoc: ', addDoc);
 };
 export const mainAccount = (name1, photourl) => {
-  // if (localStorage.getItem('registretionLoginisation') === null) {
-  //   localStorage.setItem('registretionLoginisation', false);
-  // }
-  // if (localStorage.getItem('registretionLoginisation') === 'false') {
-    //document.querySelector('.nickName').innerHTML = `<h1>${name1}</h1>`;
     document.querySelector('.addNote').innerHTML = form();
     let preDate =
       moment().format('L').split('/').slice(0, 2).reverse().join('-') + '-2020';
     let dateInFormat = preDate.split('-').reverse().join('-');
     document.querySelector('.deadlineAdd').setAttribute('min', dateInFormat);
-    // console.log('get:', '2020-05-19')
     const formAdding = document.querySelector('.addNote').querySelector('form');
     formAdding.addEventListener('submit', e => {
       e.preventDefault(); 

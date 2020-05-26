@@ -123,6 +123,7 @@ button:hover{
   transition-property: all;
   transition-duration: 0.4s;
   cursor: pointer;
+  height: 220px;
 }
 ul{
   list-style: none;
@@ -164,6 +165,7 @@ ul{
   width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;
+  height: 53px;
 }
 
 /* lightbox */
@@ -209,6 +211,8 @@ ul{
   display: flex;
   flex-direction: column;
   justify-content: left;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .lightbox__image {
@@ -299,5 +303,7 @@ ul{
     height: 100vh;
     left:0;
     top:0;
+    padding-left: 3px;
+    padding-right: 3px;
   }
 }
