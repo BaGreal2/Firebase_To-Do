@@ -165,7 +165,8 @@ ul{
   width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;
-  height: 53px;
+  height: 48px;
+  white-space: nowrap;
 }
 
 /* lightbox */
