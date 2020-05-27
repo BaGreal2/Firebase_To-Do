@@ -1,11 +1,10 @@
 import { auth } from './firebase/config';
 
 export const registerUser = async ({displayName, email, password, password2, photoURL}) => {
-  console.log('email, password registerUser', email, password);
+  //console.log('email, password registerUser', email, password);
   try {
     await auth.createUserWithEmailAndPassword(email, password);
     let user = await auth.currentUser;
-    console.log('user services', user);
     user
       .updateProfile({
         displayName: displayName,
@@ -22,10 +21,7 @@ export const registerUser = async ({displayName, email, password, password2, pho
   }
 };
 
-// registerUser();
-
 export const loginUser = async ({ email, password }) => {
-  console.log('email, password loginUser', email, password);
   try {
     await auth.signInWithEmailAndPassword(email, password);
     let user = auth.currentUser;

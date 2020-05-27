@@ -2,7 +2,6 @@ import { db } from '../firebase/config';
 import moment from 'moment';
 import card from '../templates/card.hbs';
 import form from '../templates/form.hbs';
-import { registerUser, loginUser } from '../services';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
 const writeDownNotes = async object => {
@@ -10,7 +9,6 @@ const writeDownNotes = async object => {
   let deadLine =
     object.deadline.split('-').reverse().slice(0, 2).reverse().join('/') +
     `/${arrayDate[2]}`;
-  console.log('moment:', moment().format('L'));
   const addDoc = await db.collection('notes').add({
     title: object.title,
     description: object.description,
@@ -50,7 +48,7 @@ export const mainAccount = (name1, photourl) => {
           ...note.data(),
           id: note.id,
         }));
-        console.log('all:',all);
+        console.log('All Current Notes:',all);
         document.querySelector('.notesContainer').innerHTML = card(all);
         const handleTodoClick = (e) => {
           if(e.target.nodeName !== 'LI' && e.target.className !== 'nickname_card' && e.target.className !== 'description' && e.target.className !== 'title_card'){
@@ -79,7 +77,6 @@ export const mainAccount = (name1, photourl) => {
   };
   getCurrentNotes();
 
-  //writeDownNotes()
   return `<div class="main">
   <div class="account">
     <img class = 'avatar' src="${photourl}" alt="">
@@ -108,7 +105,6 @@ const handleDelete = e => {
       text: `The deadline is: ${e.target.closest('li').dataset.deadline}`,
     })
   }
-  // db.collection("notes").doc(e.target.closest('li').id).delete()
 };
 document
   .querySelector('.accountContainer')

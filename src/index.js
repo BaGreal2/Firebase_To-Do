@@ -10,8 +10,6 @@ const refs = {
   accountContainer: document.querySelector('.accountContainer'),
 };
 
-// loginUser();
-
 const signOut = () => {
   auth.signOut();
   document.querySelector('.accountContainer2').style.display="block";
@@ -27,7 +25,6 @@ const authStateChange = async () => {
         user.photoURL,
       );
       document.querySelector('.addNote').classList.remove('hidden')
-      //console.log(document.querySelector('.ul_main'))
       document.querySelector('.accountContainer2').style.display="none";
     } else {
       createAccount();
@@ -42,6 +39,3 @@ const authStateChange = async () => {
 };
 
 authStateChange();
-
-// signOut();
-
