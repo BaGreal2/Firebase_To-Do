@@ -1,4 +1,6 @@
 import { auth } from './firebase/config';
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
 
 export const registerUser = async ({displayName, email, password, password2, photoURL}) => {
   //console.log('email, password registerUser', email, password);
@@ -17,7 +19,19 @@ export const registerUser = async ({displayName, email, password, password2, pho
         // An error happened.
       });
   } catch (error) {
-    console.log('message', error);
+    if(password.length<6){
+      Swal.fire({
+        icon: 'error',
+        title: `Too short password`,
+        text: error,
+      })
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: `Unknown error`,
+        text: error,
+      })
+    }
   }
 };
 
@@ -26,7 +40,13 @@ export const loginUser = async ({ email, password }) => {
     await auth.signInWithEmailAndPassword(email, password);
     let user = auth.currentUser;
     console.log('userCurrent', user);
+    let error1 = false;
   } catch (error) {
-    console.log('message', error);
+    Swal.fire({
+      icon: 'error',
+      title: 'Something went wrong!',
+      text: `${error}`,
+    })
+    let error1 = true;
   }
 };

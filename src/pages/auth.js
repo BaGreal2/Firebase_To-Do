@@ -31,6 +31,10 @@ export const createAccount = () => {
     formData.forEach((value, name) => (user1[name] = value));
     console.log('user:', user1)
     loginUser(user1)
+    if(!error1){
+    document.querySelector('.projectName').style.display="none";
+    document.querySelector('.top').style.display="flex";
+    }
   });
 
   const getFormValue = () => {
@@ -46,6 +50,8 @@ export const createAccount = () => {
           formData.forEach((value, name) => (user1[name] = value));
           console.log('user:', user1)
           if(user1.password===user1.passwordConfirm){
+            document.querySelector('.projectName').style.display="none";
+            document.querySelector('.top').style.display="flex";
           registerUser(user1)
           } else{
             Swal.fire({
